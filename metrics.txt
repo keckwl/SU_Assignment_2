@@ -1,0 +1,7 @@
+WER_English_%: 7.49
+WER_Hindi_%: 0.0
+MCD: 26.5249
+LID_F1: 0.894
+LID_Switches: 4401
+Anti_Spoof_EER: 0.0
+FGSM_Min_Epsilon: 0.1
