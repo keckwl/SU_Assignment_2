@@ -93,9 +93,3 @@ outputs/
 The MCD value of 26.52 dB is higher than the target of 8.0 dB. This is a known limitation of the facebook/mms-tts-mai model, which is a fixed-speaker TTS system with no speaker conditioning interface. DTW prosody warping reduces MCD from 31.4 to 26.52 dB by aligning temporal structure, but the spectral envelope remains fixed to the canonical MMS-TTS Maithili voice.
 
 ---
-
-## References
-
-- Meta MMS-TTS: https://huggingface.co/facebook/mms-tts-mai
-- OpenAI Whisper: https://github.com/openai/whisper
-- PyTorch: https://pytorch.org
