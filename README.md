@@ -1,5 +1,5 @@
 # Speech Understanding - Programming Assignment 2
----
+
 
 ## Overview
 
@@ -52,19 +52,19 @@ pip install -r requirements.txt
 1. Create a new Kaggle notebook with T4 GPU and internet enabled
 2. Upload original_segment.wav and student_voice_ref.wav as a dataset
 3. Upload pipeline.ipynb
-4. Run all cells in order
+4. Run the code
 
 ### On Google Colab
 
 1. Upload original_segment.wav and student_voice_ref.wav to the Colab session
 2. Upload pipeline.ipynb
-3. Run all cells in order
+3. Run the code
 
 ### Locally
 
 1. Place original_segment.wav and student_voice_ref.wav in the same directory as pipeline.ipynb
 2. Launch Jupyter and open pipeline.ipynb
-3. Run all cells in order
+3. Run the code
 
 ---
 
@@ -74,7 +74,7 @@ pip install -r requirements.txt
 pipeline.ipynb          - Main pipeline notebook (single cell, runs end to end)
 requirements.txt        - Python dependencies
 lid_weights.pt          - Pre-trained LID model weights
-original_segment.wav    - Source lecture audio (10 minutes)
+original_segment.wav    - NOT INCLUDED (105 MB, exceeds GitHub limit)
 student_voice_ref.wav   - Reference voice for cloning (60 seconds)
 outputs/
   denoised_lecture.wav      - Spectral subtraction output
@@ -89,6 +89,15 @@ outputs/
 ---
 
 ## Notes
+
+The source audio `original_segment.wav` is not included due to GitHub file size limits. To reproduce it, run:
+
+```
+pip install yt-dlp
+yt-dlp "https://youtu.be/ZPUtA3W-7_I" -f 140 --extract-audio --audio-format wav --download-sections "*8400-9000" --force-keyframes-at-cuts -o "original_segment.wav"
+```
+
+This downloads the 10-minute segment from timestamp 2h20m to 2h30m.
 
 The MCD value of 26.52 dB is higher than the target of 8.0 dB. This is a known limitation of the facebook/mms-tts-mai model, which is a fixed-speaker TTS system with no speaker conditioning interface. DTW prosody warping reduces MCD from 31.4 to 26.52 dB by aligning temporal structure, but the spectral envelope remains fixed to the canonical MMS-TTS Maithili voice.
 
