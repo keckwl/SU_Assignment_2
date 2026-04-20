@@ -1,0 +1,10 @@
+openai-whisper
+torchaudio
+librosa
+scipy
+numpy
+scikit-learn
+soundfile
+transformers
+accelerate
+torch
